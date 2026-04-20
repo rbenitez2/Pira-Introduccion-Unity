@@ -7,6 +7,11 @@ public class JuanSalvo : MonoBehaviour
 
     // Escribe tus variables aquí abajo: Recorda deben poder ser modificadas desde el inspector pero tambien ser privadas.
 
+    [SerializeField] private string characterName= "Insania";
+    [SerializeField] private int characterAge = 35;
+    [SerializeField] private float characterHeight = 1.78f;
+    [SerializeField] private bool pick = false;
+
     // ---------------------------------------------------------
     // (NO TOCAR)
     [Header("Referencias UI")]
@@ -27,8 +32,7 @@ public class JuanSalvo : MonoBehaviour
         // 2. TAREA: Construir la frase.
         // Asigna a la variable '_finalMessage' la concatenación de tus variables.
 
-        // _finalMessage = ... (Escribe tu código aquí)
-
+        _finalMessage = characterName + " es el nick que uso en los juegos" + ", yo tengo " + characterAge + " años  y mido " + characterHeight;
         // Mostrar en consola
         Debug.Log(_finalMessage == null ? "¡Falta construir el mensaje!" : _finalMessage);
 
@@ -43,7 +47,14 @@ public class JuanSalvo : MonoBehaviour
         // 3. TAREA: Condicionales - Responder dependiendo algun parametro como nombre,edad o altura.
         //Ejemplo: si altura >= 2 -> "Fua estas para jugar en la NBA".
 
-        // _finalMessage = ... (Escribe tu código aquí)
+        if (characterAge >= 18)
+        {
+            _finalMessage = "Ya sos mayor de edad y podes manejar";
+        }
+        else
+        {
+            _finalMessage = "Todavía sos menor de edad, aprovecha el tiempo para aprender a programar";
+        }
 
         // ---------------------------------------------------------
         // Actualizamos la UI visualmente no hace falta tocar esto
